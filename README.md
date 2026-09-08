@@ -34,7 +34,7 @@ spider-html5ever = "0.40"
 use html5ever::{parse_document, ...};
 ```
 
-The library still imports as `html5ever`, so existing code requires no changes. only the dependency line in `Cargo.toml` needs to swap.
+The library still imports as `html5ever`, so existing code requires no changes, only the dependency line in `Cargo.toml` needs to swap.
 
 ## License
 
