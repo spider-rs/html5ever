@@ -614,6 +614,8 @@ dependencies = [
 [[package]]
 name = "spider-markup5ever"
 version = "0.40.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9d40eaff4cda1de9a89d703e8b805c244c5f46959f364cdd44fe287dc6865d1b"
 dependencies = [
  "log",
  "spider-tendril",
@@ -623,6 +625,8 @@ dependencies = [
 [[package]]
 name = "spider-tendril"
 version = "0.5.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8543003b89236a34adb8d995345fbd884440014a349e8ec7e44745293f5f40b3"
 dependencies = [
  "new_debug_unreachable",
 ]
@@ -630,6 +634,8 @@ dependencies = [
 [[package]]
 name = "spider-web-atoms"
 version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "68e466b02352dcf9cfc07cbef0e8bcbd7f582cb642a8237ab5eb07049b0557a5"
 dependencies = [
  "phf",
  "phf_codegen",
