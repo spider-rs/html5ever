@@ -1,0 +1,9 @@
+repo = "https://github.com/servo/html5ever"
+subdir = "html5ever"
+pin = "a193ea7f2492d1e51eb32955a09c241345348dba"
+label = "0.40.0-dev"
+exclude = ["fuzz"]
+
+[delta]
+files = ["tests/driver.rs"]
+note = "Compile-time Send assertions. No library source delta."

@@ -109,3 +109,15 @@ fn test_driver_interrupted_by_non_script() {
     parser.process(test_case.into());
     parser.finish();
 }
+
+#[test]
+fn stack_is_send() {
+    fn assert_send<T: Send>() {}
+    assert_send::<Sink>();
+    assert_send::<html5ever::tendril::StrTendril>();
+    assert_send::<html5ever::tendril::ByteTendril>();
+    assert_send::<html5ever::buffer_queue::BufferQueue>();
+    assert_send::<html5ever::tree_builder::TreeBuilder<usize, Sink>>();
+    assert_send::<html5ever::tokenizer::Tokenizer<html5ever::tree_builder::TreeBuilder<usize, Sink>>>();
+    assert_send::<html5ever::Parser<Sink>>();
+}

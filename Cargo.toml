@@ -1,61 +1,33 @@
 [package]
 name = "spider-html5ever"
-version = "0.39.0"
-edition = "2021"
-rust-version = "1.71.0"
-authors = [
-    "j-mendez <jeff@spider.cloud>",
-    "The html5ever Project Developers",
-]
 description = "High-performance browser-grade HTML5 parser (Send-able fork via spider-tendril)"
 documentation = "https://docs.rs/spider-html5ever"
-readme = "README.md"
-keywords = ["html", "html5", "parser", "send", "concurrency"]
 categories = ["parser-implementations", "web-programming"]
+keywords = ["html", "html5", "parser", "send", "concurrency"]
+readme = "../README.md"
+version = "0.40.0"
 license = "MIT OR Apache-2.0"
+authors = ["j-mendez <jeff@spider.cloud>", "The html5ever Project Developers"]
 repository = "https://github.com/spider-rs/html5ever"
+edition = "2021"
+rust-version = "1.85"
 
 [features]
-serde = ["markup5ever/serde"]
 trace_tokenizer = []
+serde = ["markup5ever/serde"]
 
-[lib]
-name = "html5ever"
-path = "src/lib.rs"
+[dependencies]
+markup5ever = { version = "0.40.0", package = "spider-markup5ever" }
+memchr = { version = "2.8.0" }
+log = { version = "0.4" }
 
-[[example]]
-name = "arena"
-path = "examples/arena.rs"
-
-[[example]]
-name = "noop-tokenize"
-path = "examples/noop-tokenize.rs"
-
-[[example]]
-name = "noop-tree-builder"
-path = "examples/noop-tree-builder.rs"
-
-[[example]]
-name = "print-tree-actions"
-path = "examples/print-tree-actions.rs"
-
-[[example]]
-name = "tokenize"
-path = "examples/tokenize.rs"
-
-[[test]]
-name = "driver"
-path = "tests/driver.rs"
+[dev-dependencies]
+criterion = { version = "0.8" }
+typed-arena = { version = "2.0.2" }
 
 [[bench]]
 name = "html5ever"
-path = "benches/html5ever.rs"
 harness = false
 
-[dependencies]
-log = "0.4"
-markup5ever = { version = "0.39", package = "spider-markup5ever" }
-
-[dev-dependencies]
-criterion = "0.8"
-typed-arena = "2.0.2"
+[lib]
+name = "html5ever"
